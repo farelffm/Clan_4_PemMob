@@ -9,4 +9,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="let_s_share_nyour_journey">Let\'s Share\nyour journey!</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="jarak_lari">Jarak Lari</string>
+    <string name="durasi">Durasi</string>
+    <string name="save_journey">SAVE JOURNEY</string>
 </resources>
