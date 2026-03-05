@@ -14,4 +14,10 @@
     <string name="jarak_lari">Jarak Lari</string>
     <string name="durasi">Durasi</string>
     <string name="save_journey">SAVE JOURNEY</string>
+    <!-- Strings for Profile -->
+    <string name="profile_picture">Profile Picture</string>
+    <string name="default_user_name">Nama Anda</string>
+    <string name="edit">Edit</string>
+    <string name="logout">Logout</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

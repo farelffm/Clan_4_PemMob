@@ -11,11 +11,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.myapplication.databinding.FragmentLoginBinding
+import com.example.myapplication.CatatLari_Fragment
 
 import com.example.myapplication.R
 
@@ -32,7 +30,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
@@ -119,6 +117,12 @@ class LoginFragment : Fragment() {
         // TODO : initiate successful logged in experience
         val appContext = context?.applicationContext ?: return
         Toast.makeText(appContext, welcome, Toast.LENGTH_LONG).show()
+
+        // Navigate to CatatLari_Fragment after successful login
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, CatatLari_Fragment())
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
