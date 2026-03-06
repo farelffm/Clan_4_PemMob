@@ -1,23 +1,3 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="let_s_share_nyour_journey">Let\'s Share\nyour journey!</string>
-    <string name="tanggal">Tanggal</string>
-    <string name="jarak_lari">Jarak Lari</string>
-    <string name="durasi">Durasi</string>
-    <string name="save_journey">SAVE JOURNEY</string>
-    <!-- Strings for Profile -->
-    <string name="profile_picture">Profile Picture</string>
-    <string name="default_user_name">Nama Anda</string>
-    <string name="edit">Edit</string>
-    <string name="logout">Logout</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">inheal</string>
 </resources>
