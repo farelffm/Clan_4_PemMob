@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">inheal</string>
+    <string name="running_illustration">Running Illustration</string>
+    <string name="run_tracker">RunTracker</string>
+    <string name="yuk_mulai_lari">Yuk mulai lari!</string>
+    <string name="mulai_sekarang">Mulai Sekarang</string>
+    <string name="masuk">Masuk</string>
 </resources>
