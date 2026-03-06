@@ -5,4 +5,21 @@
     <string name="yuk_mulai_lari">Yuk mulai lari!</string>
     <string name="mulai_sekarang">Mulai Sekarang</string>
     <string name="masuk">Masuk</string>
+    <string name="halo_zap">Halo, Zap!</string>
+    <string name="apa_kabarmu_hari_ini">Apa kabarmu hari ini?</string>
+    <string name="area_peta_statistik_lari">Area Peta / Statistik Lari</string>
+    <string name="mulai_lari">Mulai Lari</string>
+
+    <!-- Register Strings -->
+    <string name="halo_wave">👋 Halo!</string>
+    <string name="buat_akun_baru">Buat Akun Baru</string>
+    <string name="ayo_mulai_lari_bareng">Ayo mulai lari bareng kita🏃🏻‍♂️‍➡️ </string>
+    <string name="nama_label">NAMA</string>
+    <string name="masukkan_nama_anda">Masukkan Nama Anda</string>
+    <string name="email_label">EMAIL</string>
+    <string name="masukkan_email_anda">Masukkan Email Anda</string>
+    <string name="password_label">PASSWORD</string>
+    <string name="min_6_karakter">Min. 6 karakter</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="udah_punya_akun_login_aja">Udah punya akun? Login aja</string>
 </resources>

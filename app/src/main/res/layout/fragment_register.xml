@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:orientation="vertical"
-    tools:ignore="HardcodedText,SmallSp,TouchTargetSizeCheck,VisualLintErrors,ContentDescription,SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableAction,ImageContrastCheck,SelectableText,MotionLayoutMissingId,LabelFor,RtlHardcoded,RtlSymmetry,RtlEnabled,UseCompoundDrawables,Autofill,MissingConstraints,InefficientWeight">
+    android:orientation="vertical">
 
     <!-- Header dengan gradasi + wave -->
     <FrameLayout
@@ -22,12 +21,13 @@
             android:paddingEnd="28dp"
             android:paddingTop="70dp"
             android:paddingBottom="28dp"
-            android:gravity="top">
+            android:gravity="top"
+            tools:ignore="RtlSymmetry">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="👋 Halo!"
+                android:text="@string/halo_wave"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
-                android:text="Buat Akun Baru"
+                android:text="@string/buat_akun_baru"
                 android:textColor="#FFFFFF"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ayo mulai lari bareng kita🏃🏻‍♂️‍➡️ "
+                android:text="@string/ayo_mulai_lari_bareng"
                 android:textSize="16sp"
                 android:textColor="#E0F4FF" />
 
@@ -56,7 +56,8 @@
             android:layout_height="40dp"
             android:layout_gravity="bottom"
             android:scaleType="fitXY"
-            android:src="@drawable/wave_header" />
+            android:src="@drawable/wave_header"
+            android:contentDescription="@null" />
 
     </FrameLayout>
 
@@ -78,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="NAMA"
+                android:text="@string/nama_label"
                 android:textColor="#64748B"
                 android:textSize="11sp"
                 android:textStyle="bold" />
@@ -90,21 +91,22 @@
                 android:layout_height="50dp"
                 android:layout_marginBottom="18dp"
                 android:background="@drawable/bg_input"
-                android:hint="Masukan Nama Anda"
+                android:hint="@string/masukkan_nama_anda"
                 android:inputType="textPersonName"
                 android:lines="1"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="#0F172A"
                 android:textColorHint="#CBD5E1"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
 
             <!-- Label Email -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="EMAIL"
+                android:text="@string/email_label"
                 android:textColor="#64748B"
                 android:textSize="11sp"
                 android:textStyle="bold" />
@@ -116,21 +118,22 @@
                 android:layout_height="50dp"
                 android:layout_marginBottom="18dp"
                 android:background="@drawable/bg_input"
-                android:hint="Masukan Email Anda"
+                android:hint="@string/masukkan_email_anda"
                 android:inputType="textEmailAddress"
                 android:lines="1"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="#0F172A"
                 android:textColorHint="#CBD5E1"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
 
             <!-- Label Password -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="PASSWORD"
+                android:text="@string/password_label"
                 android:textColor="#64748B"
                 android:textSize="11sp"
                 android:textStyle="bold" />
@@ -142,14 +145,15 @@
                 android:layout_height="50dp"
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/bg_input"
-                android:hint="Min. 6 karakter"
+                android:hint="@string/min_6_karakter"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="#0F172A"
                 android:textColorHint="#CBD5E1"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
 
             <!-- Tombol Sign Up -->
             <Button
@@ -159,7 +163,7 @@
                 android:layout_marginBottom="18dp"
                 android:backgroundTint="#5BB8E8"
                 android:stateListAnimator="@null"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -171,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:padding="8dp"
-                android:text="Udah punya akun? Login aja"
+                android:text="@string/udah_punya_akun_login_aja"
                 android:textSize="13sp"
                 android:textColor="#94A3B8"
                 android:gravity="center"
