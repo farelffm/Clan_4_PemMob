@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.inheal.inheal.R
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
@@ -30,11 +30,11 @@ class CatatLari_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Inisialisasi View
-        val etTanggal = view.findViewById<TextInputEditText>(R.id.etTanggal)
-        val etJarak = view.findViewById<TextInputEditText>(R.id.etJarak)
-        val etDurasi = view.findViewById<TextInputEditText>(R.id.etDurasi)
-        val btnSave = view.findViewById<MaterialButton>(R.id.btnSave)
+        // 1. Inisialisasi View (Ganti ke EditText biasa karena layout baru pakai EditText)
+        val etTanggal = view.findViewById<EditText>(R.id.etTanggal)
+        val etJarak = view.findViewById<EditText>(R.id.etJarak)
+        val etDurasi = view.findViewById<EditText>(R.id.etDurasi)
+        val btnSave = view.findViewById<Button>(R.id.btnSave)
 
         // 2. Setup Date Picker
         etTanggal.setOnClickListener {
@@ -65,7 +65,7 @@ class CatatLari_Fragment : Fragment() {
         }
     }
 
-    private fun showDatePicker(editText: TextInputEditText) {
+    private fun showDatePicker(editText: EditText) {
         val datePicker = MaterialDatePicker.Builder.datePicker()
             .setTitleText("Pilih Tanggal")
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
@@ -81,7 +81,7 @@ class CatatLari_Fragment : Fragment() {
         datePicker.show(parentFragmentManager, "DATE_PICKER")
     }
 
-    private fun showTimePicker(editText: TextInputEditText) {
+    private fun showTimePicker(editText: EditText) {
         val timePicker = MaterialTimePicker.Builder()
             .setTimeFormat(TimeFormat.CLOCK_24H)
             .setHour(0)
