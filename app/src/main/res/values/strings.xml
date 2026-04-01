@@ -22,4 +22,27 @@
     <string name="min_6_karakter">Min. 6 karakter</string>
     <string name="sign_up">Sign Up</string>
     <string name="udah_punya_akun_login_aja">Udah punya akun? Login aja</string>
+
+    <!-- Profile Fragment Strings -->
+    <string name="profile_picture">Profile Picture</string>
+    <string name="default_user_name">Nama User</string>
+    <string name="edit">Edit</string>
+    <string name="logout">Logout</string>
+
+    <!-- Login Fragment Strings -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign In</string>
+    <string name="login_failed">Login failed</string>
+    <string name="invalid_username">Invalid username</string>
+    <string name="invalid_password">Password too short</string>
+    <string name="welcome">Welcome ! </string>
+
+    <!-- Catat Lari Fragment Strings -->
+    <string name="let_s_share_nyour_journey">Let\'s share\nyour journey</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="jarak_lari">Jarak Lari</string>
+    <string name="durasi">Durasi</string>
+    <string name="save_journey">Save Journey</string>
 </resources>

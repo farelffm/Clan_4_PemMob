@@ -3,9 +3,9 @@ package com.example.profile
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.Profile_Fragment
-import com.example.myapplication.R
+import com.inheal.inheal.R
 
-class ProfileActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

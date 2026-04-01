@@ -12,10 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import com.example.myapplication.databinding.FragmentLoginBinding
+import com.inheal.inheal.databinding.FragmentLoginBinding
 import com.example.myapplication.CatatLari_Fragment
 
-import com.example.myapplication.R
+import com.inheal.inheal.R
 
 class LoginFragment : Fragment() {
 
