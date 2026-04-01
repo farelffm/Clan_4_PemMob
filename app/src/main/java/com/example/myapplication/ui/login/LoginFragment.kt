@@ -12,8 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.inheal.inheal.databinding.FragmentLoginBinding
-import com.example.myapplication.CatatLari_Fragment
 
 import com.inheal.inheal.R
 
@@ -110,6 +110,10 @@ class LoginFragment : Fragment() {
                 passwordEditText.text.toString()
             )
         }
+
+        binding.tvRegister.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
@@ -118,11 +122,8 @@ class LoginFragment : Fragment() {
         val appContext = context?.applicationContext ?: return
         Toast.makeText(appContext, welcome, Toast.LENGTH_LONG).show()
 
-        // Navigate to CatatLari_Fragment after successful login
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, CatatLari_Fragment())
-            .addToBackStack(null)
-            .commit()
+        // Navigate to BerandaFragment after successful login
+        findNavController().navigate(R.id.action_loginFragment_to_berandaFragment)
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

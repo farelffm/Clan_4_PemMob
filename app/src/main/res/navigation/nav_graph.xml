@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.inheal.inheal.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.inheal.inheal.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_berandaFragment"
+            app:destination="@id/berandaFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/berandaFragment"
+        android:name="com.inheal.inheal.BerandaFragment"
+        android:label="BerandaFragment"
+        tools:layout="@layout/fragment_beranda">
+        <action
+            android:id="@+id/action_berandaFragment_to_profile_Fragment"
+            app:destination="@id/profile_Fragment" />
+        <action
+            android:id="@+id/action_berandaFragment_to_catatLari_Fragment"
+            app:destination="@id/catatLari_Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_Fragment"
+        android:name="com.example.myapplication.Profile_Fragment"
+        android:label="Profile_Fragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_Fragment_to_berandaFragment"
+            app:destination="@id/berandaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/catatLari_Fragment"
+        android:name="com.example.myapplication.CatatLari_Fragment"
+        android:label="CatatLari_Fragment"
+        tools:layout="@layout/fragment_catatlari" />
+
+</navigation>
