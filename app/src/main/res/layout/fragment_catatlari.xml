@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".CatatLari_Fragment">
+    tools:context="com.example.myapplication.CatatLari_Fragment">
 
     <!-- Header dengan gradasi + wave -->
     <FrameLayout
