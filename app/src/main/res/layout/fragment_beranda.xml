@@ -2,96 +2,135 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F6FA">
+    android:background="#F8FAFC">
 
     <!-- HEADER -->
-    <LinearLayout
-        android:id="@+id/headerLayout"
+    <FrameLayout
+        android:id="@+id/headerFrame"
         android:layout_width="0dp"
-        android:layout_height="180dp"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:background="@drawable/bg_gradient_top"
+        android:layout_height="220dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="👋 Halo!"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="28dp"
+            android:background="@drawable/bg_gradient_top"
+            android:gravity="top">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selamat Datang"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👋 Halo!"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Siap mulai hari ini?"
-            android:textColor="#E3F2FD"
-            android:textSize="14sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Siap lari hari ini?"
+                android:textColor="#E0F2F1"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
 
-    <!-- WAVE -->
-    <ImageView
-        android:id="@+id/wave"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:src="@drawable/wave_header"
-        android:scaleType="fitXY"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        </LinearLayout>
+
+        <!-- WAVE (Diletakkan di dalam FrameLayout agar menempel di bawah) -->
+        <ImageView
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/wave_header"
+            android:contentDescription="@null"/>
+    </FrameLayout>
 
     <!-- CONTENT -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/wave"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerFrame"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="28dp">
 
-            <!-- CARD -->
+            <!-- DASHBOARD CARD -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeColor="#F1F5F9"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Dashboard"
+                        android:text="Aktivitas Anda"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:textColor="#0F172A"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Area statistik / map"
-                        android:textColor="#BDBDBD"
-                        android:textStyle="italic"/>
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="4dp"
+                        android:background="#5BB8E8"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:background="#F8FAFC"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_home"
+                            app:tint="#CBD5E1"
+                            android:contentDescription="@null"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Belum ada data statistik"
+                            android:textColor="#94A3B8"
+                            android:textSize="13sp"
+                            android:layout_marginTop="12dp"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -101,19 +140,20 @@
 
     </ScrollView>
 
-    <!-- FAB -->
+    <!-- FAB (Catat Lari - Icon Tambah) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabStartRun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:contentDescription="Mulai"
-        android:src="@android:drawable/ic_media_play"
-        app:backgroundTint="#3498DB"
+        android:layout_margin="24dp"
+        android:contentDescription="Tambah Lari"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#5BB8E8"
         app:tint="#FFFFFF"
-        app:elevation="8dp"
+        app:elevation="4dp"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="32dp"/>
 
     <!-- BOTTOM NAV -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -123,8 +163,9 @@
         android:background="#FFFFFF"
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"
-        app:itemTextColor="#2C3E50"
-        app:itemIconTint="#2C3E50"
+        app:itemTextColor="#64748B"
+        app:itemIconTint="#64748B"
+        app:elevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

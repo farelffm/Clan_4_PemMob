@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.inheal.inheal.R
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.slider.Slider
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
@@ -30,11 +33,13 @@ class CatatLari_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Inisialisasi View (Ganti ke EditText biasa karena layout baru pakai EditText)
+        // 1. Inisialisasi View
         val etTanggal = view.findViewById<EditText>(R.id.etTanggal)
-        val etJarak = view.findViewById<EditText>(R.id.etJarak)
+        val etJarak = view.findViewById<EditText>(R.id.etJarak) // Hidden field for compatibility
         val etDurasi = view.findViewById<EditText>(R.id.etDurasi)
         val btnSave = view.findViewById<Button>(R.id.btnSave)
+        val sliderJarak = view.findViewById<Slider>(R.id.sliderJarak)
+        val tvJarakValue = view.findViewById<TextView>(R.id.tvJarakValue)
 
         // 2. Setup Date Picker
         etTanggal.setOnClickListener {
@@ -45,22 +50,28 @@ class CatatLari_Fragment : Fragment() {
         etDurasi.setOnClickListener {
             showTimePicker(etDurasi)
         }
+        
+        // 4. Setup Slider Jarak
+        sliderJarak.addOnChangeListener { _, value, _ ->
+            val formattedValue = if (value >= 10.0) "10+ km" else String.format(Locale.getDefault(), "%.1f km", value)
+            tvJarakValue.text = formattedValue
+            etJarak.setText(formattedValue) // Sync with hidden field
+        }
 
-        // 4. Aksi saat tombol diklik
+        // 5. Aksi saat tombol diklik
         btnSave.setOnClickListener {
             val tanggal = etTanggal.text.toString()
-            val jarak = etJarak.text.toString()
+            val jarak = tvJarakValue.text.toString()
             val durasi = etDurasi.text.toString()
 
-            if (tanggal.isEmpty() || jarak.isEmpty() || durasi.isEmpty()) {
-                Toast.makeText(requireContext(), "Isi dulu semua datanya, cuy!", Toast.LENGTH_SHORT).show()
+            if (tanggal.isEmpty() || jarak == "0 km" || durasi.isEmpty()) {
+                Toast.makeText(requireContext(), "Lengkapi data larinya dulu, yuk!", Toast.LENGTH_SHORT).show()
             } else {
-                val hasil = "Tersimpan: $jarak km dalam $durasi pada $tanggal"
+                val hasil = "Tersimpan: $jarak dalam $durasi pada $tanggal"
                 Toast.makeText(requireContext(), hasil, Toast.LENGTH_LONG).show()
 
-                etTanggal.text?.clear()
-                etJarak.text?.clear()
-                etDurasi.text?.clear()
+                // Navigasi kembali ke fragment sebelumnya (Beranda)
+                findNavController().popBackStack()
             }
         }
     }

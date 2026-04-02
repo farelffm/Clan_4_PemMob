@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.data.LoginDataSource
 import com.inheal.inheal.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -28,9 +29,16 @@ class RegisterFragment : Fragment() {
 
         binding.btnSignUp.setOnClickListener {
             if (validateInput()) {
-                // Jika valid, baru pindah ke Beranda
-                Toast.makeText(requireContext(), "Registrasi Berhasil!", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_registerFragment_to_berandaFragment)
+                val email = binding.edtEmail.text.toString().trim()
+                val password = binding.edtPassword.text.toString().trim()
+                
+                // Simpan user ke in-memory storage (LoginDataSource)
+                LoginDataSource.registerUser(email, password)
+                
+                Toast.makeText(requireContext(), "Registrasi Berhasil! Silakan Login.", Toast.LENGTH_SHORT).show()
+                
+                // Arahkan ke LoginFragment, bukan Beranda
+                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
             }
         }
 

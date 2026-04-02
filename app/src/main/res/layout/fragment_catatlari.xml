@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".CatatLari_Fragment">
 
-    <!-- Header dengan gradasi + wave (Sesuai Tema Login/Regis) -->
+    <!-- Header dengan gradasi + wave -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="220dp">
@@ -93,29 +93,50 @@
                 android:textColorHint="#CBD5E1"
                 android:textSize="14sp" />
 
-            <!-- Jarak Lari -->
-            <TextView
+            <!-- Jarak Lari (Slider Style) -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/jarak_lari"
-                android:textColor="#64748B"
-                android:textSize="11sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/jarak_lari"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvJarakValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 km"
+                    android:textColor="#5BB8E8"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderJarak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0.0"
+                android:valueTo="10.0"
+                android:stepSize="0.1"
+                app:thumbColor="#5BB8E8"
+                app:trackColorActive="#5BB8E8"
+                app:trackColorInactive="#E2E8F0"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Input Jarak (Hidden, used for data consistency) -->
             <EditText
                 android:id="@+id/etJarak"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/bg_input"
-                android:hint="Masukkan jarak (km)"
-                android:inputType="numberDecimal"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColor="#0F172A"
-                android:textColorHint="#CBD5E1"
-                android:textSize="14sp" />
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="invisible"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <!-- Durasi -->
             <TextView
