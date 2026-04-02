@@ -37,7 +37,7 @@ class RegisterFragment : Fragment() {
                 
                 Toast.makeText(requireContext(), "Registrasi Berhasil! Silakan Login.", Toast.LENGTH_SHORT).show()
                 
-                // Arahkan ke LoginFragment, bukan Beranda
+                // Arahkan ke LoginFragment
                 findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
             }
         }
@@ -51,6 +51,7 @@ class RegisterFragment : Fragment() {
         val nama = binding.edtNama.text.toString().trim()
         val email = binding.edtEmail.text.toString().trim()
         val password = binding.edtPassword.text.toString().trim()
+        val rePassword = binding.edtRepassword.text.toString().trim()
 
         if (nama.isEmpty()) {
             binding.edtNama.error = "Nama tidak boleh kosong"
@@ -79,6 +80,18 @@ class RegisterFragment : Fragment() {
         if (password.length < 6) {
             binding.edtPassword.error = "Password minimal 6 karakter"
             binding.edtPassword.requestFocus()
+            return false
+        }
+
+        if (rePassword.isEmpty()) {
+            binding.edtRepassword.error = "Ulangi password tidak boleh kosong"
+            binding.edtRepassword.requestFocus()
+            return false
+        }
+
+        if (password != rePassword) {
+            binding.edtRepassword.error = "Password tidak cocok"
+            binding.edtRepassword.requestFocus()
             return false
         }
 

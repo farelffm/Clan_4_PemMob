@@ -6,12 +6,11 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <!-- Header dengan gradasi + wave (Mirip Register) -->
+    <!-- HEADER -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="220dp">
 
-        <!-- Background gradasi biru -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,7 +49,7 @@
 
         </LinearLayout>
 
-        <!-- Wave di bawah header -->
+        <!-- WAVE -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -61,7 +60,7 @@
 
     </FrameLayout>
 
-    <!-- Form area -->
+    <!-- FORM AREA -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,7 +73,7 @@
             android:orientation="vertical"
             android:padding="28dp">
 
-            <!-- Label Email -->
+            <!-- EMAIL -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -84,7 +83,6 @@
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
-            <!-- Input Email -->
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
@@ -101,7 +99,7 @@
                 android:textSize="14sp"
                 android:importantForAutofill="no" />
 
-            <!-- Label Password -->
+            <!-- PASSWORD -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,7 +109,6 @@
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
-            <!-- Input Password -->
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -128,7 +125,7 @@
                 android:textSize="14sp"
                 android:importantForAutofill="no" />
 
-            <!-- Tombol Login -->
+            <!-- LOGIN BUTTON -->
             <Button
                 android:id="@+id/login"
                 android:layout_width="match_parent"
@@ -148,7 +145,7 @@
                 android:layout_gravity="center"
                 android:visibility="gone" />
 
-            <!-- Register link -->
+            <!-- REGISTER LINK -->
             <TextView
                 android:id="@+id/tv_register"
                 android:layout_width="match_parent"

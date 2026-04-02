@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <!-- Header Gradasi & Wave -->
+    <!-- HEADER -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="320dp">
@@ -20,16 +20,28 @@
             android:orientation="vertical"
             android:padding="28dp">
 
-            <!-- Logo Aplikasi Bulat -->
-            <ImageView
-                android:id="@+id/ivRunningIllustration"
+            <!-- LOGO -->
+            <FrameLayout
                 android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:src="@drawable/logo_circle"
-                android:contentDescription="@string/running_illustration" />
+                android:layout_height="180dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_bg" />
+
+                <ImageView
+                    android:id="@+id/ivRunningIllustration"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp"
+                    android:src="@drawable/logo_circle"
+                    android:contentDescription="@string/running_illustration" />
+            </FrameLayout>
 
         </LinearLayout>
 
+        <!-- WAVE -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="40dp"

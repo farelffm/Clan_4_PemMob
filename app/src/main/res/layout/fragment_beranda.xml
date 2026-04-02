@@ -52,7 +52,7 @@
 
         </LinearLayout>
 
-        <!-- WAVE (Diletakkan di dalam FrameLayout agar menempel di bawah) -->
+        <!-- WAVE -->
         <ImageView
             android:id="@+id/wave"
             android:layout_width="match_parent"
@@ -140,7 +140,7 @@
 
     </ScrollView>
 
-    <!-- FAB (Catat Lari - Icon Tambah) -->
+    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabStartRun"
         android:layout_width="wrap_content"

@@ -6,12 +6,11 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <!-- Header dengan gradasi + wave -->
+    <!-- HEADER -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="220dp">
 
-        <!-- Background gradasi biru -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,7 +49,7 @@
 
         </LinearLayout>
 
-        <!-- Wave di bawah header -->
+        <!-- WAVE -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -61,7 +60,7 @@
 
     </FrameLayout>
 
-    <!-- Form area -->
+    <!-- FORM AREA -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,7 +73,7 @@
             android:orientation="vertical"
             android:padding="28dp">
 
-            <!-- Label Nama -->
+            <!-- NAMA -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -84,7 +83,6 @@
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
-            <!-- Input Nama -->
             <EditText
                 android:id="@+id/edt_nama"
                 android:layout_width="match_parent"
@@ -101,7 +99,7 @@
                 android:textSize="14sp"
                 android:importantForAutofill="no" />
 
-            <!-- Label Email -->
+            <!-- EMAIL -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,7 +109,6 @@
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
-            <!-- Input Email -->
             <EditText
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
@@ -128,7 +125,7 @@
                 android:textSize="14sp"
                 android:importantForAutofill="no" />
 
-            <!-- Label Password -->
+            <!-- PASSWORD -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,12 +135,11 @@
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
-            <!-- Input Password -->
             <EditText
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="18dp"
                 android:background="@drawable/bg_input"
                 android:hint="@string/min_6_karakter"
                 android:inputType="textPassword"
@@ -155,7 +151,33 @@
                 android:textSize="14sp"
                 android:importantForAutofill="no" />
 
-            <!-- Tombol Sign Up -->
+            <!-- RE-PASSWORD -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="RE-TYPE PASSWORD"
+                android:textColor="#64748B"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_repassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/bg_input"
+                android:hint="Ulangi password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#0F172A"
+                android:textColorHint="#CBD5E1"
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
+
+            <!-- SIGN UP BUTTON -->
             <Button
                 android:id="@+id/btn_sign_up"
                 android:layout_width="match_parent"
@@ -168,7 +190,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <!-- Login -->
+            <!-- LOGIN LINK -->
             <TextView
                 android:id="@+id/tv_login"
                 android:layout_width="match_parent"
